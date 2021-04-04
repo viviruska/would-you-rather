@@ -97,4 +97,8 @@ Your code will talk to the database via 4 methods:
 
 ## Mockups
 
+#### Login
 ![](mockups/Login.png)
+
+#### New Question
+![](mockups/NewQuestion.png)
