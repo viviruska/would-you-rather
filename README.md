@@ -105,3 +105,6 @@ Your code will talk to the database via 4 methods:
 
 #### New Question
 ![](mockups/NewQuestion.png)
+
+#### Leaderboard
+![](mockups/Leaderboard.png)
