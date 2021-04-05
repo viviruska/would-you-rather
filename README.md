@@ -100,5 +100,8 @@ Your code will talk to the database via 4 methods:
 #### Login
 ![](mockups/Login.png)
 
+#### Home
+![](mockups/Home.png)
+
 #### New Question
 ![](mockups/NewQuestion.png)
