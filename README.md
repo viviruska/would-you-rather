@@ -97,11 +97,16 @@ Your code will talk to the database via 4 methods:
 
 ## Mockups
 
+Mockups created in proto.io
+
 #### Login
 ![](mockups/Login.png)
 
 #### Home
 ![](mockups/Home.png)
+
+#### View Poll
+![](mockups/ViewPoll.png)
 
 #### New Question
 ![](mockups/NewQuestion.png)
