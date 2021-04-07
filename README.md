@@ -108,6 +108,9 @@ Mockups created in proto.io
 #### View Poll
 ![](mockups/ViewPoll.png)
 
+#### Results
+![](mockups/Results.png)
+
 #### New Question
 ![](mockups/NewQuestion.png)
 
