@@ -1,0 +1,1 @@
+import { getInitialData } from '../utils/api'
