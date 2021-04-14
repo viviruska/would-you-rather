@@ -1,7 +1,9 @@
+import formatQuestion from 'helpers'
+
 let users = {
-    sarahedo: {
-      id: 'sarahedo',
-      name: 'Sarah Edo',
+    vivirsk: {
+      id: 'vivirsk',
+      name: 'Vivien Ruska',
       avatarURL: ,
       answers: {
         "8xf0y6ziyjabvozdd253nd": 'optionOne',
@@ -37,10 +39,10 @@ let users = {
   let questions = {
     "8xf0y6ziyjabvozdd253nd": {
       id: '8xf0y6ziyjabvozdd253nd',
-      author: 'sarahedo',
+      author: 'vivirsk',
       timestamp: 1467166872634,
       optionOne: {
-        votes: ['sarahedo'],
+        votes: ['vivirsk'],
         text: 'have horrible short term memory',
       },
       optionTwo: {
@@ -57,20 +59,20 @@ let users = {
         text: 'become a superhero',
       },
       optionTwo: {
-        votes: ['johndoe', 'sarahedo'],
+        votes: ['johndoe', 'vivirsk'],
         text: 'become a supervillain'
       }
     },
     "am8ehyc8byjqgar0jgpub9": {
       id: 'am8ehyc8byjqgar0jgpub9',
-      author: 'sarahedo',
+      author: 'vivirsk',
       timestamp: 1488579767190,
       optionOne: {
         votes: [],
         text: 'be telekinetic',
       },
       optionTwo: {
-        votes: ['sarahedo'],
+        votes: ['vivirsk'],
         text: 'be telepathic'
       }
     },
@@ -83,7 +85,7 @@ let users = {
         text: 'be a front-end developer',
       },
       optionTwo: {
-        votes: ['sarahedo'],
+        votes: ['vivirsk'],
         text: 'be a back-end developer'
       }
     },
@@ -115,39 +117,19 @@ let users = {
     },
   }
   
-  function generateUID () {
-    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
-  }
+export function _getUsers () {
+  return new Promise((res, rej) => {
+    setTimeout(() => res({...users}), 1000)
+  })
+}
   
-  export function _getUsers () {
-    return new Promise((res, rej) => {
-      setTimeout(() => res({...users}), 1000)
-    })
-  }
+export function _getQuestions () {
+  return new Promise((res, rej) => {
+    setTimeout(() => res({...questions}), 1000)
+  })
+}
   
-  export function _getQuestions () {
-    return new Promise((res, rej) => {
-      setTimeout(() => res({...questions}), 1000)
-    })
-  }
-  
-  function formatQuestion ({ optionOneText, optionTwoText, author }) {
-    return {
-      id: generateUID(),
-      timestamp: Date.now(),
-      author,
-      optionOne: {
-        votes: [],
-        text: optionOneText,
-      },
-      optionTwo: {
-        votes: [],
-        text: optionTwoText,
-      }
-    }
-  }
-  
-  export function _saveQuestion (question) {
+export function _saveQuestion (question) {
     return new Promise((res, rej) => {
       const authedUser = question.author;
       const formattedQuestion = formatQuestion(question);
@@ -169,9 +151,9 @@ let users = {
         res(formattedQuestion)
       }, 1000)
     })
-  }
+}
   
-  export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
+export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
     return new Promise((res, rej) => {
       setTimeout(() => {
         users = {
@@ -199,4 +181,4 @@ let users = {
         res()
       }, 500)
     })
-  }
+}
