@@ -9,8 +9,8 @@ export function handleInitialData() {
   return (dispatch) => {
     return getInitialData()
       .then(({ questions, users }) => {
-        dispatch(receivePolls(questions)),
-        dispatch(receiveUsers(users)),
+        dispatch(receivePolls(questions))
+        dispatch(receiveUsers(users))
         dispatch(setAuthedUser(AUTHED_ID))
       })
   }
