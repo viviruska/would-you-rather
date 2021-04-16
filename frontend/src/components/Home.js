@@ -2,30 +2,46 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class Home extends Component {
+  state = {
+    'activeTab': 'unanswered'
+  }
+
   render() {
     console.log(this.props)
     return (
-      <div>
-        Home page
-        <div>
-          <h3>Unanswered</h3>
-          <ul>
-            {this.props.unansweredPollIds.map((pollId) => (
-              <li key={pollId}>
-                {pollId}
-              </li>
-            ))}
-          </ul>
+      <div className='container'>
+        <div 
+          className='header-left' 
+          style={{backgroundColor: this.state.activeTab === 'unanswered' ? '#e2e2e2' : 'white'}}
+          onClick={() => this.setState({activeTab: 'unanswered'})}
+        >
+            Unanswered
         </div>
-        <div>
-          <h3>Answered</h3>
-          <ul>
-            {this.props.answeredPollIds.map((pollId) => (
-              <li key={pollId}>
-                {pollId}
-              </li>
-            ))}
-          </ul>
+        <div 
+          className='header-right' 
+          style={{backgroundColor: this.state.activeTab === 'answered' ? '#e2e2e2' : 'white'}}
+          onClick={() => this.setState({activeTab: 'answered'})}
+        >
+          Answered
+        </div>
+        <div className='poll-container'>
+          {this.state.activeTab === 'unanswered'
+          ? <ul>
+              {this.props.unansweredPollIds.map((pollId) => (
+                <li key={pollId}>
+                  {pollId}
+                </li>
+              ))}
+            </ul>
+          : <ul>
+              {this.props.answeredPollIds.map((pollId) => (
+                <li key={pollId}>
+                  {pollId}
+                </li>
+              ))}
+            </ul>
+          }
+
         </div>
       </div>
     )
