@@ -22,8 +22,8 @@ class App extends Component {
 function mapStateToProps({ polls, users, authedUser }) {
   return {
     loading: 
-      Object.keys(users).length === 0 || 
-      Object.keys(polls).length === 0 || 
+      // Object.keys(users).length === 0 || 
+      // Object.keys(polls).length === 0 || 
       authedUser === null
   }
 }
