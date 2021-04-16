@@ -15,14 +15,14 @@ class Home extends Component {
           style={{backgroundColor: this.state.activeTab === 'unanswered' ? '#e2e2e2' : 'white'}}
           onClick={() => this.setState({activeTab: 'unanswered'})}
         >
-            Unanswered
+          <span className='header-text'>Unanswered</span>
         </div>
         <div 
           className='header-right' 
           style={{backgroundColor: this.state.activeTab === 'answered' ? '#e2e2e2' : 'white'}}
           onClick={() => this.setState({activeTab: 'answered'})}
         >
-          Answered
+          <span className='header-text'>Answered</span>
         </div>
         <div className='poll-container'>
           {this.state.activeTab === 'unanswered'

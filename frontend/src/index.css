@@ -31,13 +31,23 @@ code {
   height: 50px;
   border: 1px solid green;
   border-radius: 8px 0px 0px 0px;
+  display: table;
+  text-align: center;
 }
 .header-right {
   grid-area: header2;
   height: 50px;
   border: 1px solid green;
   border-radius: 0px 8px 0px 0px;
+  display: table;
+  text-align: center;
 }
 .poll-container {
   grid-area: main;
+}
+
+.header-text {
+  font-family: 'Trebuchet MS';
+  display: table-cell;
+  vertical-align: middle;
 }
