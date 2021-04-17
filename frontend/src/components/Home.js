@@ -10,7 +10,6 @@ class Home extends Component {
   render() {
     const isUnanswered = this.state.activeTab === 'unanswered'
     const isAnswered = this.state.activeTab === 'answered'
-    console.log(this.props)
 
     return (
       <div className='container'>
@@ -39,19 +38,18 @@ class Home extends Component {
             ? <ul className='poll-un-list'>
                 {this.props.unansweredPollIds.map((pollId) => (
                   <li key={pollId}>
-                    <Poll id={pollId} />
+                    <Poll id={pollId} status='unanswered' />
                   </li>
                 ))}
               </ul>
             : <ul className='poll-un-list'>
                 {this.props.answeredPollIds.map((pollId) => (
                   <li key={pollId}>
-                    <Poll id={pollId} />
+                    <Poll id={pollId} status='answered' />
                   </li>
                 ))}
               </ul>
           }
-
         </div>
       </div>
     )
@@ -68,7 +66,7 @@ function mapStateToProps({ polls, users, authedUser}) {
     unansweredPollIds: pollIds.filter((pollId) => !(pollId in userAnswers)),
     answeredPollIds: pollIds.filter((pollId) => pollId in userAnswers),
   }     
-  }
+}
 
 
 export default connect(mapStateToProps)(Home)

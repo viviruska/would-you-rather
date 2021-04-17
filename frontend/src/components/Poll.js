@@ -2,15 +2,19 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class Poll extends Component {
+  toPollDetail = (e, id, status) => {
+    console.log(status)
+    // TODO: redirect to details view of the poll
+  }
+
   render() {
-    console.log(this.props)
-    const { id, poll, author } = this.props;
+    const { id, poll, author, status } = this.props;
 
     if (poll === null) {
       return <p>This poll doesn't exist</p>
     }
 
-    const { optionOne, optionTwo } = poll
+    const { optionOne} = poll
     const { name, avatarURL } = author
 
     return (
@@ -28,7 +32,12 @@ class Poll extends Component {
             <div className='divider'></div>
             <span className='poll-text general'>Would you rather</span>
             <span className='poll-text'>{ `...${optionOne.text}...` }</span>
-            <button className='view-poll-btn'>View Poll</button>
+            <button 
+              className='view-poll-btn'
+              onClick={(e) => this.toPollDetail(e, id, status)}
+            >
+              View Poll
+            </button>
           </div>
         </div>
       </div>
@@ -36,13 +45,14 @@ class Poll extends Component {
   }
 }
 
-function mapStateToProps({ polls, users }, { id }) {
+function mapStateToProps({ polls, users }, { id, status }) {
   const poll = polls[id]
   const author = poll ? users[poll.author] : null
 
   return {
-    poll: poll,  // formatPoll?
-    author: author
+    poll: poll,  // TODO: formatPoll?
+    author: author,
+    status: status
   }
 }
 
