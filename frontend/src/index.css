@@ -65,16 +65,17 @@ code {
   padding: 0;
 }
 .poll-item {
-  max-width: 600px;
+  max-width: 650px;
   border: 2px solid #dad7d7;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 0px;
   border: 2px solid #dad7d7;
   border-radius: 8px;
+  /* display: flex; */
 }
 
-.poll-header{
+.poll-header {
   height: 50px;
   border: solid #dad7d7;
   border-radius: 0px 8px 0px 0px;
@@ -82,5 +83,57 @@ code {
   border-right-style: none;
   border-bottom-style: 2px;
   border-left-style: none;
-  background-color: #e7e7e7;
+  background-color: #f5f5f5;
+}
+
+.poll-header-text{
+  @extend .header-text;
+  font-weight: bold;
+  padding: 15px 30px;
+  display: table-cell;
+  font-family: 'Trebuchet MS';
+}
+
+.poll-overview {
+  display: flex
+}
+
+.avatar {
+  height: 100px;
+  border-radius: 50px;
+  margin: 40px;
+}
+
+.poll-info{
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.divider {
+  border-left: 3px solid #e7e7e7;
+  height: 140px;
+  position: absolute;
+  margin: 0px;
+}
+
+.poll-text {
+  font-family: 'Trebuchet MS';
+  margin: 10px 20px;
+}
+
+.general {
+  font-weight: bold;
+}
+
+.view-poll-btn {
+  background-color: white;
+  font-size: 16px;
+  font-family: 'Trebuchet MS';
+  color: green;
+  padding: 10px 140px;
+  border-radius: 5px;
+  border: 2px solid green;
+  cursor: pointer;
+  margin: 10px 20px;
 }
