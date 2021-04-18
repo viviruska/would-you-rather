@@ -16,8 +16,9 @@ class App extends Component {
   render () {
     return (
       <Router>
-        <div>
+        <Fragment>
           <LoadingBar />
+          <div>
           <Nav />
           {this.props.loading === true
             ? null
@@ -28,7 +29,8 @@ class App extends Component {
                 <Route path='/leaderboard' component={UserList} />
               </div>
           }
-        </div>        
+          </div>
+        </Fragment>    
       </Router>
     )
   }

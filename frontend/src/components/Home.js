@@ -38,14 +38,14 @@ class Home extends Component {
             ? <ul className='poll-un-list'>
                 {this.props.unansweredPollIds.map((pollId) => (
                   <li key={pollId}>
-                    <Poll id={pollId} status='unanswered' />
+                    <Poll id={pollId} />
                   </li>
                 ))}
               </ul>
             : <ul className='poll-un-list'>
                 {this.props.answeredPollIds.map((pollId) => (
                   <li key={pollId}>
-                    <Poll id={pollId} status='answered' />
+                    <Poll id={pollId} />
                   </li>
                 ))}
               </ul>

@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link, withRouter } from 'react-router-dom'
 
 class Poll extends Component {
-  toPollDetail = (e, id, status) => {
-    console.log(status)
-    // TODO: redirect to details view of the poll
+  toPollDetail = (e, id) => {
+    // e.preventDefault()
+    this.props.history.push(`/questions/${id}`)
   }
 
   render() {
-    const { id, poll, author, status } = this.props;
-
-    if (poll === null) {
-      return <p>This poll doesn't exist</p>
-    }
+    const { id, poll, author } = this.props;
 
     const { optionOne} = poll
     const { name, avatarURL } = author
@@ -34,7 +31,7 @@ class Poll extends Component {
             <span className='poll-text'>{ `...${optionOne.text}...` }</span>
             <button 
               className='view-poll-btn'
-              onClick={(e) => this.toPollDetail(e, id, status)}
+              onClick={(e) => this.toPollDetail(e, id)}
             >
               View Poll
             </button>
@@ -45,15 +42,14 @@ class Poll extends Component {
   }
 }
 
-function mapStateToProps({ polls, users }, { id, status }) {
+function mapStateToProps({ polls, users }, { id }) {
   const poll = polls[id]
   const author = poll ? users[poll.author] : null
 
   return {
     poll: poll,  // TODO: formatPoll?
-    author: author,
-    status: status
+    author: author
   }
 }
 
-export default connect(mapStateToProps)(Poll)
+export default withRouter(connect(mapStateToProps)(Poll))
