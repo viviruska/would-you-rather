@@ -178,7 +178,7 @@ export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
           }
         }
   
-        res()
+        res(authedUser)
       }, 500)
     })
 }

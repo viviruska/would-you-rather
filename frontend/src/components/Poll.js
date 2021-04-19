@@ -19,7 +19,7 @@ class Poll extends Component {
         <div className='poll-header'>
           <span className='poll-header-text'>{name} asks:</span>
         </div>
-        <div className='poll-overview'>
+        <div className='poll-container'>
           <img 
             src={avatarURL}
             alt={`Avatar of ${name}`}

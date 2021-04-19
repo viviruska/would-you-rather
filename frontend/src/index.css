@@ -91,7 +91,6 @@ li {
 }
 .poll-item {
   max-width: 650px;
-  border: 2px solid #dad7d7;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 0px;
@@ -119,7 +118,7 @@ li {
   font-family: 'Trebuchet MS';
 }
 
-.poll-overview {
+.poll-container {
   display: flex
 }
 
@@ -149,6 +148,11 @@ li {
 
 .general {
   font-weight: bold;
+}
+
+.general-big {
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .view-poll-btn {
