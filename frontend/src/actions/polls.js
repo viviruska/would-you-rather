@@ -10,11 +10,11 @@ export function receivePolls(polls) {
   }
 }
 
-function savePollAnswer({ authedUser, pollId, answer }) {
+function savePollAnswer({ authedUser, id, answer }) {
   return {
     type: SAVE_POLL_ANSWER,
     authedUser,
-    pollId,
+    id,
     answer,
   }
 }
@@ -34,7 +34,7 @@ export function handleSavePollAnswer(id, answer) {
       })
       .then((res) => {
         console.log(res)
-        //dispatch(savePollAnswer({ authedUser, id, answer }))
+        dispatch(savePollAnswer({ authedUser, id, answer }))
       })
   }
 }

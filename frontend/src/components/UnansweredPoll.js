@@ -18,9 +18,6 @@ class UnansweredPoll extends Component {
 
     const { dispatch, id } = this.props;
     dispatch(handleSavePollAnswer(id, this.state.selectedOption))
-
-    console.log('----SUBMIT-----')
-    console.log(id)
   }
   
   render() {
@@ -33,7 +30,6 @@ class UnansweredPoll extends Component {
 
     const { optionOne, optionTwo } = poll
     const { name, avatarURL } = author
-    console.log(optionOne, optionTwo, name, avatarURL)
 
     return (
       <div className='poll-item'>
