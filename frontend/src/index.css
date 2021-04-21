@@ -129,16 +129,17 @@ li {
 }
 
 .poll-info{
-  margin: 10px;
+  margin: 0px; 
+  /* 10 */
   display: flex;
   flex-direction: column;
 }
 
 .divider {
   border-left: 3px solid #e7e7e7;
-  height: 140px;
+  height: 150px;
   position: absolute;
-  margin: 0px;
+  margin: 15px 0px;
 }
 
 .poll-text {
@@ -165,4 +166,79 @@ li {
   border: 2px solid green;
   cursor: pointer;
   margin: 10px 20px;
+}
+
+.avatar-result {
+  height: 150px;
+  border-radius: 75px;
+  margin: 150px 40px;
+}
+
+.divider-result {
+  border-left: 3px solid #e7e7e7;
+  height: 450px;
+  position: absolute;
+  margin: 20px 0px;
+}
+
+.result-container {
+  border: 2px solid #dad7d7;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 360px;
+  margin: 0px 30px 30px 30px;
+}
+
+.poll-text-result {
+  font-family: 'Trebuchet MS';
+  margin: 20px 30px;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.result-text {
+  font-family: 'Trebuchet MS';
+  padding: 0;
+  margin: 20px 30px;
+}
+
+progress {
+	/* display:inline-block; */
+  /* width: 100%; */
+	width: 310px;
+	height: 30px;
+	padding: 15px 0 0 0;
+	margin:0;
+	background:none;
+	border: 0;
+	border-radius: 8px;
+	text-align: left;
+	/* position:relative; */
+	font-family: Trebuchet MS;
+	font-size: 0.8em;
+  margin: 20px 30px;
+}
+progress::-webkit-progress-bar {
+	height: 30px;
+	width: 310px;
+	margin: 0 auto;
+	background-color: #CCC;
+	border-radius: 8px;
+	box-shadow:0px 0px 6px #777 inset;
+}
+progress::-webkit-progress-value {
+	/* display:inline-block; */
+	/* float:left; */
+	height: 30px;
+	/* margin:0px -10px 0 0; */
+	background: rgb(74, 207, 74);
+	border-radius: 8px;
+	box-shadow:0px 0px 6px #777 inset;
+}
+progress:after {
+	/* margin:-26px 0 0 -7px; */
+	padding:0;
+	/* display:inline-block; */
+	/* float:left; */
+	content: attr(value) '%';
 }
