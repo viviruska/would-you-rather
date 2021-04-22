@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 class AnsweredPoll extends Component {
 
   render() {
-    const { poll, author, id } = this.props;
+    const { poll, author, authedUser } = this.props;
     const { optionOne, optionTwo } = poll
     const { name, avatarURL } = author
 
@@ -26,19 +26,25 @@ class AnsweredPoll extends Component {
             className='avatar-result'
           />
           <div className='poll-info'>
-            <div className='divider-result'></div>
-            <span className='poll-text-result'>Results: </span>
-            <div className='result-container'>
-              <span className='result-text'>
-                Would you rather { optionOne.text }
-              </span>
+            <div className='result-divider'></div>
+            <span className='result-header-text'>Results: </span>
+            <div
+              className='result-container'
+              style={{backgroundColor: optionOne.votes.includes(authedUser) ? '#e4faf8' : 'white'}}
+            >
+              <div className='result-text bold'>
+                Would you rather { optionOne.text }?
+              </div>
               <progress id="progressBar" max="100" value={oneRatio}></progress>
               <div className='result-text'>{numOfOptionOneVotes} out of {sumOfVotes} votes</div>
             </div>
-            <div className='result-container'>
-              <span className='result-text'>
-                Would you rather { optionTwo.text }
-              </span>
+            <div
+              className='result-container'
+              style={{backgroundColor: optionTwo.votes.includes(authedUser) ? '#e4faf8' : 'white'}}
+            >
+              <div className='result-text bold'>
+                Would you rather { optionTwo.text }?
+              </div>
               <progress id="progressBar" max="100" value={twoRatio}></progress>
               <div className='result-text'>{numOfOptionTwoVotes} out of {sumOfVotes} votes</div>
             </div>
@@ -55,7 +61,8 @@ function mapStateToProps({ polls, users, authedUser }, { id }) {
 
   return {
     poll,
-    author
+    author,
+    authedUser
   }
 }
 
