@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { handleSavePoll } from '../actions/polls'
 
 class NewPoll extends Component {
   state = {
@@ -11,6 +13,13 @@ class NewPoll extends Component {
       ? this.setState({ optionOne: e.target.value })
       : this.setState({ optionTwo: e.target.value })
   }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    const { dispatch } = this.props;
+    dispatch(handleSavePoll(this.state.optionOne, this.state.optionTwo))
+  };
 
   inputIsEmpty = () => {
     return this.state.optionOne === '' || this.state.optionTwo === ''
@@ -25,7 +34,7 @@ class NewPoll extends Component {
         <div className='poll-container poll-info'>
           <div className='new-poll-text'>Complete the question: </div>
           <div className='new-poll-text'>Would you rather...</div>
-          <form className="form-horizontal">
+          <form className="form-horizontal" onSubmit={this.handleSubmit}>
             <input
               type="text"
               placeholder=""
@@ -35,7 +44,9 @@ class NewPoll extends Component {
               // ref={(c) => this.optionOne = c}
               name="optionOne"
             />
-            <div>--- OR ---</div>
+            {/* <div className='test'><hr className="solid"/> */}
+            <span>OR</span>
+            {/* <hr className="solid"/></div> */}
             <input
               type="text"
               className="form-control"
@@ -46,7 +57,10 @@ class NewPoll extends Component {
             <button
               disabled={this.inputIsEmpty()}
               className='new-poll-btn' 
-              style={{backgroundColor: this.inputIsEmpty() ? 'grey' : '#1fa67e'}}
+              style={{
+                backgroundColor: this.inputIsEmpty() ? 'grey' : '#1fa67e', 
+                border: this.inputIsEmpty() ? 'grey' : '2px solid green'
+              }}
               >
                 Submit
               </button>
@@ -57,4 +71,5 @@ class NewPoll extends Component {
   }
 }
 
-export default NewPoll
+
+export default connect()(NewPoll)

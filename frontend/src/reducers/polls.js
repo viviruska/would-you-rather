@@ -1,4 +1,9 @@
-import { RECEIVE_POLLS, SAVE_POLL_ANSWER } from '../actions/polls'
+import {
+  RECEIVE_POLLS,
+  SAVE_POLL_ANSWER,
+  SAVE_POLL
+} from '../actions/polls'
+import { generateUID } from '../utils/helpers'
 
 export default function polls(state={}, action) {
   switch (action.type) {
@@ -15,6 +20,24 @@ export default function polls(state={}, action) {
             [action.answer]: {
               ...state[action.id][action.answer],
               votes: state[action.id][action.answer].votes.concat([action.authedUser])
+            }
+          }
+        }
+      case SAVE_POLL:
+        const newId = generateUID();
+
+        return {
+          ...state,
+          [newId]: {
+            author: action.authedUser,
+            timestamp: Date.now(),
+            optionOne: {
+              votes: [],
+              text: action.optionOne
+            },
+            optionTwo: {
+              votes: [],
+              text: action.optionTwo
             }
           }
         }
