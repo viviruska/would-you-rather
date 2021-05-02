@@ -32,8 +32,8 @@ class NewPoll extends Component {
           <span className='new-poll-header-text'> Create New Question</span>
         </div>
         <div className='poll-container poll-info'>
-          <div className='new-poll-text'>Complete the question: </div>
-          <div className='new-poll-text'>Would you rather...</div>
+          <div className='new-poll-text-1'>Complete the question: </div>
+          <div className='new-poll-text-2'>Would you rather ...</div>
           <form className="form-horizontal" onSubmit={this.handleSubmit}>
             <input
               type="text"
@@ -45,7 +45,7 @@ class NewPoll extends Component {
               name="optionOne"
             />
             {/* <div className='test'><hr className="solid"/> */}
-            <span>OR</span>
+            <div className='or-text'>---- OR ----</div>
             {/* <hr className="solid"/></div> */}
             <input
               type="text"

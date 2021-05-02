@@ -270,12 +270,26 @@ progress:after {
   vertical-align: middle;
 }
 
-.new-poll-text {
+.new-poll-text-1 {
+  margin-left: 30px;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  font-family: 'Trebuchet MS';
+  font-size: 22px;
+  color: #717171;
+  font-weight: bold;
+}
+
+.new-poll-text-2 {
   margin: 10px 30px;
+  font-family: 'Trebuchet MS';
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
 }
 
 .form-horizontal {
-  margin: 50px 30px;
+  margin: 30px 30px;
 }
 .form-control {
   padding: 15px 220px;
@@ -300,4 +314,9 @@ hr.solid {
 
 .test {
   display: table-row-group;
+}
+
+.or-text {
+  margin: 20px 10px;
+  text-align: center;
 }
