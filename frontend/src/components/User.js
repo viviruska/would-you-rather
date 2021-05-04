@@ -6,6 +6,7 @@ class User extends Component {
   render() {
 
     const {name, avatarURL, answers, questions} = this.props.user
+    const result = Object.values(answers).length + questions.length
     return (
       <div className='poll-item user-container'>
         <img 
@@ -13,14 +14,29 @@ class User extends Component {
           alt={`Avatar of ${name}`}
           className='avatar'
         />
-        <div className='user-data'>
-          <div className='divider'></div>
-          <div>Answered questions  {Object.values(answers).length}</div>
-          <div>Created questions  {questions.length}</div>
+        <div>
+          <div className='divider-horizontal-1'></div>
+          <div className='new-poll-text-2 lower'>{name}</div>
+          <div className='score-per-type'>
+            <div className='score-text'>Answered questions</div>
+            <div className='score-text'>{Object.values(answers).length}</div>
+          </div>
+          <hr/>
+          <div className='score-per-type'>
+            <div className='score-text'>Created questions</div>
+            <div className='score-text'>{questions.length}</div>
+          </div>
         </div>
-        <div className='score'>
-          <div>score</div>
-          <div>score2</div>
+        <div>
+          <div className='divider-horizontal-2'></div>
+          <div className='score-sum-container'>
+            <div className='poll-header'>
+              <span className='poll-header-text'>Score</span>
+            </div>
+            <div className='score-sum'>
+              <div className='score-circle'>{result}</div>
+            </div>
+          </div>
         </div>
       </div>
     )

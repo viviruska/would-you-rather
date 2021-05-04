@@ -17,7 +17,6 @@ class UserList extends Component {
             </li>
           ))}
         </ul>
-        Leaderboard
       </div>
     )
   }

@@ -321,11 +321,7 @@ hr.solid {
   text-align: center;
 }
 
-.score {
-  margin: 10px; 
-  /* display: flex;
-  flex-direction: column; */
-}
+/* ------------- Leaderboard ------------- */
 
 .user-container {
   max-width: 700px;
@@ -334,8 +330,79 @@ hr.solid {
   border: 2px solid #dad7d7;
   border-radius: 8px;
   display: grid;
-  grid-template-columns: 30% 50% 20%;
+  grid-template-columns: 27% 50% 23%;
   grid-template-rows: auto;
   grid-template-areas: 
     "avatar user-data score";
+}
+
+.score-per-type {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "score-type score-number";
+  font-family: 'Trebuchet MS';
+}
+
+.lower {
+  margin: 20px 20px;
+}
+
+.score-text {
+  font-family: 'Trebuchet MS';
+  margin: 8px 20px;
+}
+
+.divider-horizontal-1 {
+  border-left: 3px solid #e7e7e7;
+  height: 145px;
+  position: absolute;
+  margin: 20px -10px;
+}
+
+.divider-horizontal-2 {
+  border-left: 3px solid #e7e7e7;
+  height: 145px;
+  position: absolute;
+  margin: 20px 0px;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 5px;
+  margin-left: 20px;
+  padding: 0;
+}
+
+.score-sum-container {
+  max-width: 110px;
+  height: 140px;
+  margin: 20px 10px 20px 25px;
+  /* margin-bottom: 20px; */
+  padding: 0px;
+  border: 2px solid #dad7d7;
+  border-radius: 8px;
+}
+
+.score-sum {
+  position: relative;
+}
+
+.score-circle {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background: #1fa67e;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 35%);
 }
