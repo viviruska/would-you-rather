@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { removeAuthedUser } from '../actions/authedUser'
 
-export default function Nav () {
+class Nav extends Component {
+  render() {
+    const { dispatch, authedUser } = this.props
   return (
     <nav className='nav'>
       <ul>
@@ -20,17 +24,35 @@ export default function Nav () {
             Leaderboard
           </NavLink>
         </li>
-        <li>
-          <NavLink to='/login' activeClassName='active'>
-            Welcome, Vivien
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/logout' activeClassName='active'>
-            Logout
-          </NavLink>
-        </li>
+        {(authedUser)
+          ? <li>
+              <div>Welcome, {authedUser}</div>
+              <img src=''/>
+            </li>
+          : ''
+        }
+        {(authedUser) 
+          ? <li>
+              <NavLink 
+                to='/' 
+                activeClassName='active'
+                onClick={() => dispatch(removeAuthedUser())}
+              >
+                Logout
+              </NavLink>
+            </li>
+          : ''
+        }
       </ul>
     </nav>
   )
 }
+}
+
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser
+  }
+}
+
+export default connect(mapStateToProps)(Nav)

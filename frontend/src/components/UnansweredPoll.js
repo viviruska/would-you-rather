@@ -43,7 +43,7 @@ class UnansweredPoll extends Component {
               className='avatar'
             />
           <div className='poll-info'>
-            <div className='divider'></div>
+            <div className='dividerm'></div>
             <span className='poll-text general-big'>Would You Rather ...</span>
             <form onSubmit={(e) => this.formSubmit(e)}>
               <div className='radio'>

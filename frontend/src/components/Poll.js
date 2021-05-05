@@ -26,7 +26,7 @@ class Poll extends Component {
             className='avatar'
           />
           <div className='poll-info'>
-            <div className='divider'></div>
+            <div className='dividerm'></div>
             <span className='poll-text general'>Would you rather</span>
             <span className='poll-text'>{ `...${optionOne.text}...` }</span>
             <button 

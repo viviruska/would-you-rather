@@ -8,22 +8,25 @@ import Nav from './Nav'
 import PollDetail from './PollDetail'
 import NewPoll from './NewPoll'
 import UserList from './UserList'
+import Login from './Login'
 
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData())
   }
   render () {
+    const { authedUser } = this.props;
+
     return (
       <Router>
         <Fragment>
           <LoadingBar />
           <div>
-          <Nav />
+          <Nav user={ authedUser } />
           {this.props.loading === true
             ? null
             : <div>
-                <Route path='/' exact component={Home} />
+                <Route path='/' exact component={authedUser ? Home : Login} />
                 <Route path='/questions/:question_id' component={PollDetail} />
                 <Route path='/add' component={NewPoll} />
                 <Route path='/leaderboard' component={UserList} />
@@ -41,7 +44,8 @@ function mapStateToProps({ polls, users, authedUser }) {
     loading: 
       // Object.keys(users).length === 0 || 
       // Object.keys(polls).length === 0 || 
-      authedUser === null
+      authedUser === null,
+    authedUser
   }
 }
 

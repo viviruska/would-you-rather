@@ -134,7 +134,7 @@ li {
   flex-direction: column;
 }
 
-.divider {
+.dividerm {
   border-left: 3px solid #e7e7e7;
   height: 150px;
   position: absolute;
@@ -405,4 +405,49 @@ hr {
   top: 50%;
   left: 50%;
   transform: translate(-50%, 35%);
+}
+
+.login-header-text {
+  font-family: 'Trebuchet MS';
+  font-size: 20px;
+  font-weight: bold;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.login-header-text-2 {
+  display: table-row;
+  font-family: 'Trebuchet MS';
+}
+
+.login-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.login-text {
+  text-align: center;
+  font-family: 'Trebuchet MS';
+  font-size: 30px;
+  font-weight: bolder;
+  color: #1fa67e;
+}
+
+.change-height {
+  min-height: 60px;
+  height: 60px;
+  border-left: none;
+}
+
+.poll-item-2 {
+  max-width: 650px;
+  /* height: 1000px; */
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 0px;
+  border: 2px solid #dad7d7;
+  border-radius: 8px;
+  /* display: flex; */
 }
