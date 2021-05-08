@@ -5,9 +5,6 @@ import User from './User'
 class UserList extends Component {
 
   render() {
-    console.log('----------USERS--------')
-    console.log(this.props)
-
     return (
       <div className='polls-container'>
         <ul className='poll-un-list'>
@@ -28,7 +25,6 @@ function mapStateToProps({ users }) {
       (Object.values(b.answers).length + b.questions.length)-(Object.values(a.answers).length + a.questions.length)
     )
     })
-  console.log(sortedUsers)
 
   return {
     users: sortedUsers

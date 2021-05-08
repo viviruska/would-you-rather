@@ -9,11 +9,13 @@ import PollDetail from './PollDetail'
 import NewPoll from './NewPoll'
 import UserList from './UserList'
 import Login from './Login'
+import Authorization from './Authorization'
 
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData())
   }
+
   render () {
     const { authedUser } = this.props;
 
@@ -24,9 +26,13 @@ class App extends Component {
           <div>
           <Nav user={ authedUser } />
           {this.props.loading === true
-            ? null
+            ? <div>
+                <Route path='/' exact component={Login} />
+                <Route path='/add' component={Authorization} />
+                <Route path='/leaderboard' component={Authorization} />
+              </div>
             : <div>
-                <Route path='/' exact component={authedUser ? Home : Login} />
+                <Route path='/' exact component={Home} />
                 <Route path='/questions/:question_id' component={PollDetail} />
                 <Route path='/add' component={NewPoll} />
                 <Route path='/leaderboard' component={UserList} />

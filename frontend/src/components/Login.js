@@ -2,50 +2,26 @@ import React, { Component } from "react";
 import { Dropdown } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import 'semantic-ui-css/semantic.min.css';
+import { setAuthedUser } from '../actions/authedUser'
 
 class Login extends Component {
+  state = {
+    selectedUser: ''
+  }
+
+  handleChange = (e, data) => {
+    this.setState({ selectedUser: data.value})
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+
+    const { dispatch } = this.props;
+    dispatch(setAuthedUser(this.state.selectedUser))
+  }
+
   render() {
     const { users } = this.props
-
-    // only for testing
-    const friendOptions = [
-        {
-          key: 'Jenny Hess',
-          text: 'Jenny Hess',
-          value: 'Jenny Hess',
-          image: { avatar: true, src: 'https://react.semantic-ui.com/images/avatar/small/jenny.jpg' },
-        },
-        {
-          key: 'Elliot Fu',
-          text: 'Elliot Fu',
-          value: 'Elliot Fu',
-          image: { avatar: true, src: 'https://react.semantic-ui.com/images/avatar/small/elliot.jpg' },
-        },
-        {
-          key: 'Stevie Feliciano',
-          text: 'Stevie Feliciano',
-          value: 'Stevie Feliciano',
-          image: { avatar: true, src: 'https://react.semantic-ui.com/images/avatar/small/stevie.jpg' },
-        },
-        {
-          key: 'Christian',
-          text: 'Christian',
-          value: 'Christian',
-          image: { avatar: true, src: 'https://react.semantic-ui.com/images/avatar/small/christian.jpg' },
-        },
-        {
-          key: 'Matt',
-          text: 'Matt',
-          value: 'Matt',
-          image: { avatar: true, src: 'https://react.semantic-ui.com/images/avatar/small/matt.jpg' },
-        },
-        {
-          key: 'Justen Kitsune',
-          text: 'Justen Kitsune',
-          value: 'Justen Kitsune',
-          image: { avatar: true, src: 'https://react.semantic-ui.com/images/avatar/small/justen.jpg' },
-        },
-    ]
 
     return (
       <div className='poll-item-2'>
@@ -60,13 +36,20 @@ class Login extends Component {
             alt='logo'
           />
           <div className='login-text'>Sign in</div>
-          <form>
+          <form className='sign-in-form' onSubmit={(e) => this.handleSubmit(e)}>
           <Dropdown
             placeholder='Select User'
             fluid
             selection
-            options={friendOptions}
+            options={users}
+            onChange={this.handleChange} 
           />
+            <button
+              className='new-poll-btn' 
+              style={{ padding: '10px 275px'}}
+              >
+                Submit
+              </button>
           </form>
         </div>
       </div>
@@ -74,4 +57,21 @@ class Login extends Component {
   }
 }
 
-export default connect()(Login)
+function mapStateToProps({ users }) {
+  const usersOptions = Object.values(users)
+  const usersArray = []
+  usersOptions.forEach(user => {
+    usersArray.push({
+      key: user.id,
+      text: user.name,
+      value: user.id,
+      image: { avatar: true, src: user.avatarURL },
+    })
+  });
+
+  return {
+    users: usersArray
+  }
+}
+
+export default connect(mapStateToProps)(Login)

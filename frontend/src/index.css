@@ -12,21 +12,6 @@ code {
     monospace;
 }
 
-.active {
-  font-weight: bold;
-}
-
-.nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  text-decoration: none;
-}
-
-.nav li:first-child {
-  padding-left: 0;
-}
-
 ul {
   padding-left: 0;
 }
@@ -126,6 +111,13 @@ li {
   height: 100px;
   border-radius: 50px;
   margin: 40px;
+}
+
+.small-avatar {
+  height: 40px;
+  border-radius: 20px;
+  margin-right: 10px;
+  /* display: table-column; */
 }
 
 .poll-info{
@@ -302,7 +294,7 @@ progress:after {
   color: white;
   padding: 20px 270px;
   border-radius: 5px;
-  border: 2px solid green;
+  border: 2px solid #1fa67e;
   cursor: pointer;
   margin-top: 30px;
 }
@@ -450,4 +442,20 @@ hr {
   border: 2px solid #dad7d7;
   border-radius: 8px;
   /* display: flex; */
+}
+
+.sign-in-form {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.table {
+  display: flex;
+  margin-left: 180px;
+}
+.table-row {
+  margin-top: 10px;
+
 }
