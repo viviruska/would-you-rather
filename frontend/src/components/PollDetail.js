@@ -8,7 +8,7 @@ class PollDetail extends Component {
     const { status, id } = this.props;
 
     if (id === null) {
-        return <p>This poll doesn't exist</p>  // TODO: nice 404 page
+        return <p>This poll doesn't exist</p>
       }
 
     return (
