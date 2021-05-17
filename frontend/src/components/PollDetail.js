@@ -25,7 +25,6 @@ class PollDetail extends Component {
 function mapStateToProps({ polls, users, authedUser }, ownProps) {
   const pollId = ownProps.match.params.question_id
   const poll = polls[pollId]
-  // const author = poll ? users[poll.author] : null
   const userAnswers = users[authedUser].answers
   const status = pollId in userAnswers ? 'answered' : 'unanswered'
 

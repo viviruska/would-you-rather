@@ -19,6 +19,7 @@ class NewPoll extends Component {
 
     const { dispatch } = this.props;
     dispatch(handleSavePoll(this.state.optionOne, this.state.optionTwo))
+    this.props.history.push(`/`)
   };
 
   inputIsEmpty = () => {

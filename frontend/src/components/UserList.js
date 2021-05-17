@@ -9,7 +9,7 @@ class UserList extends Component {
       <div className='polls-container'>
         <ul className='poll-un-list'>
           {this.props.users.map((user) => (
-            <li key={user.id}>
+            <li className='li2' key={user.id}>
               <User id={user.id} />
             </li>
           ))}

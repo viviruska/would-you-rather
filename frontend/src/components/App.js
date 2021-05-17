@@ -28,6 +28,7 @@ class App extends Component {
           {this.props.loading === true
             ? <div>
                 <Route path='/' exact component={Login} />
+                <Route path='/questions/:question_id' component={Authorization} />
                 <Route path='/add' component={Authorization} />
                 <Route path='/leaderboard' component={Authorization} />
               </div>

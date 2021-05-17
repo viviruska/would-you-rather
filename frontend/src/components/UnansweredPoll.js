@@ -68,7 +68,6 @@ class UnansweredPoll extends Component {
                   { optionTwo.text}
                 </label>
               </div>
-              <div>Selected option is: {this.state.selectedOption}</div>
               <button
                 type='submit'
                 className='view-poll-btn'

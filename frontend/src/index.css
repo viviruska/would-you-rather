@@ -18,7 +18,20 @@ ul {
 
 li {
   list-style-type: none;
-  padding: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+.li {
+  list-style-type: none;
+  padding-top: 10px;
+  padding-left: 10px;
+  text-decoration: none;
+}
+
+.li2 {
+  list-style-type: none;
+  padding-bottom: 20px;
   text-decoration: none;
 }
 
@@ -81,7 +94,6 @@ li {
   padding: 0px;
   border: 2px solid #dad7d7;
   border-radius: 8px;
-  /* display: flex; */
 }
 
 .poll-header {
@@ -117,7 +129,6 @@ li {
   height: 40px;
   border-radius: 20px;
   margin-right: 10px;
-  /* display: table-column; */
 }
 
 .poll-info{
@@ -201,17 +212,13 @@ li {
 }
 
 progress {
-	/* display:inline-block; */
-  /* width: 100%; */
 	width: 310px;
 	height: 30px;
-	/* padding: 15px 0 0 0; */
 	margin: 0;
 	background: none;
 	border: 0;
 	border-radius: 8px;
 	text-align: left;
-	/* position:relative; */
 	font-family: Trebuchet MS;
 	font-size: 0.8em;
   margin: 20px 30px;
@@ -225,19 +232,13 @@ progress::-webkit-progress-bar {
 	box-shadow:0px 0px 6px #777 inset;
 }
 progress::-webkit-progress-value {
-	/* display:inline-block; */
-	/* float:left; */
 	height: 30px;
-	/* margin:0px -10px 0 0; */
 	background: rgb(74, 207, 74);
 	border-radius: 8px;
 	box-shadow:0px 0px 6px #777 inset;
 }
 progress:after {
-	/* margin:-26px 0 0 -7px; */
 	padding:0;
-	/* display:inline-block; */
-	/* float:left; */
 	content: attr(value) '%';
 }
 
@@ -314,7 +315,6 @@ hr.solid {
 }
 
 /* ------------- Leaderboard ------------- */
-
 .user-container {
   max-width: 700px;
   margin: 0 auto;
@@ -435,13 +435,11 @@ hr {
 
 .poll-item-2 {
   max-width: 650px;
-  /* height: 1000px; */
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 0px;
   border: 2px solid #dad7d7;
   border-radius: 8px;
-  /* display: flex; */
 }
 
 .sign-in-form {
@@ -455,7 +453,7 @@ hr {
   display: flex;
   margin-left: 180px;
 }
+
 .table-row {
   margin-top: 10px;
-
 }

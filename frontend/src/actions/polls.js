@@ -43,7 +43,6 @@ export function handleSavePollAnswer(id, answer) {
         alert('There was an error saving the poll answer. Please try again.')
       })
       .then((res) => {
-        console.log(res)
         dispatch(savePollAnswer({ authedUser, id, answer }))
       })
   }
