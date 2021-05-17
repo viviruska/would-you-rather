@@ -21,7 +21,7 @@ class Nav extends Component {
       <Menu tabular>
         <Menu.Item
           as={Link}
-          to='/' exact 
+          to='/'
           name='home'
           active={activeItem === 'home'}
           onClick={this.handleItemClick}
@@ -44,7 +44,7 @@ class Nav extends Component {
           {(authedUser)
             ? <li>
               <div className='table'>
-                <img src={avatarURL} className='small-avatar'/>
+                <img src={avatarURL} className='small-avatar' alt='user avatar'/>
                 <div className='table-row'>Welcome, {name}</div>
                 </div>
               </li>

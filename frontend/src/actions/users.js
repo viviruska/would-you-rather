@@ -7,12 +7,3 @@ export function receiveUsers(users) {
     users,
   }
 }
-
-function savePollAnswer({ authedUser, id, answer }) {
-  return {
-    type: SAVE_POLL_ANSWER,
-    authedUser,
-    id,
-    answer,
-  }
-}

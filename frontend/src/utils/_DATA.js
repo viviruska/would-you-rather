@@ -4,7 +4,7 @@ let users = {
     vivirsk: {
       id: 'vivirsk',
       name: 'Vivien Ruska',
-      avatarURL: "https://tylermcginnis.com/would-you-rather/sarah.jpg",
+      avatarURL: "https://s.gravatar.com/avatar/2eb60d9a0926daf5a53a24c94ca1f36d?s=80",
       answers: {
         "8xf0y6ziyjabvozdd253nd": 'optionOne',
         "6ni6ok3ym7mf1p33lnez": 'optionTwo',

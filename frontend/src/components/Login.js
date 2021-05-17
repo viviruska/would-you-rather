@@ -31,7 +31,7 @@ class Login extends Component {
         </div>
         <div className=''>
           <img 
-            src={'/img/mici.jpeg'}
+            src={'/img/mici_logo.jpg'}
             className='login-img'
             alt='logo'
           />

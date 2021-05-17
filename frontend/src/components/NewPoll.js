@@ -42,18 +42,14 @@ class NewPoll extends Component {
               value={this.state.optionOne}
               onChange={(e) => this.handleChange(e, 'one')}
               className="form-control" 
-              // ref={(c) => this.optionOne = c}
               name="optionOne"
             />
-            {/* <div className='test'><hr className="solid"/> */}
             <div className='or-text'>---- OR ----</div>
-            {/* <hr className="solid"/></div> */}
             <input
               type="text"
               className="form-control"
               value={this.state.optionTwo}
               onChange={(e) => this.handleChange(e, 'two')}
-              // ref={(c) => this.optionTwo = c} name="optionTwo"
             />
             <button
               disabled={this.inputIsEmpty()}
